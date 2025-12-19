@@ -1,0 +1,33 @@
+# Python bytecode and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Packaging artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test and coverage outputs
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# OS-specific cruft
+.DS_Store
+Thumbs.db
+
+# Local environment files
+.env
+.flaskenv
