@@ -1,6 +1,5 @@
 """
-API integration tests
-Test complete registration workflow
+API integration tests (copied) - no changes
 """
 import pytest
 import json

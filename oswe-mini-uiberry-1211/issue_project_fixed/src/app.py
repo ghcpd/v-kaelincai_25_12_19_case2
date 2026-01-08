@@ -1,11 +1,8 @@
 """
-Flask Application - User Registration API
+Flask Application - User Registration API (copied)
 """
 from flask import Flask, request, jsonify, render_template
-try:
-    from src.validators import validate_registration_data
-except ImportError:
-    from validators import validate_registration_data
+from src.validators import validate_registration_data
 
 app = Flask(__name__)
 
@@ -20,36 +17,29 @@ def index():
 def register():
     """
     User registration API endpoint
-    
-    Expected request body:
-    {
-        "username": "string",
-        "email": "string",
-        "birth_date": "YYYY-MM-DD"
-    }
     """
     data = request.get_json()
-    
+
     if not data:
         return jsonify({
             "success": False,
             "message": "Invalid request data"
         }), 400
-    
+
     username = data.get("username", "")
     email = data.get("email", "")
     birth_date = data.get("birth_date", "")
-    
+
     # Validate data
     validation_result = validate_registration_data(username, email, birth_date)
-    
+
     if not validation_result["valid"]:
         return jsonify({
             "success": False,
             "message": "Registration data validation failed",
             "errors": validation_result["errors"]
         }), 400
-    
+
     # Simulate successful registration
     return jsonify({
         "success": True,

@@ -1,6 +1,5 @@
 """
-Date validator unit tests
-These tests demonstrate cross-browser date format compatibility issues
+Date validator unit tests (copied from original) - no changes
 """
 import pytest
 from src.validators import validate_birth_date, validate_registration_data
